@@ -7,7 +7,7 @@
 
 <pre>
  <code>
-  {<Inputboxtest datas={data} testfunction={bottomup} testfunction2={bottomup2} testfunction3={bottomup3} testfunction4={ testfunction4 } inputcheck={ inputTest}/>}
+  { <Inputboxtest datas={data} testfunction={bottomup} testfunction2={bottomup2} testfunction3={bottomup3} testfunction4={ testfunction4 } inputcheck={ inputTest}/> }
  </code>
 </pre>
 상위에 있는 컴포넌트 혹은 데이터를 하위컴포넌트에
