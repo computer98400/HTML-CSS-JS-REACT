@@ -5,7 +5,7 @@
 ## 상위 컴포넌트 -> 하위 컴포넌트
 상위에서 하위로 보낼땐 컴포넌트에 props를 붙여서 표현하게 된다.
 
-<pre><code>{ <Inputboxtest datas={data} testfunction={bottomup} testfunction2={bottomup2} testfunction3={bottomup3} testfunction4={ testfunction4 } inputcheck={ inputTest}/> }</code></pre>
+<pre><code><Inputboxtest datas={data} testfunction={bottomup} testfunction2={bottomup2} testfunction3={bottomup3} testfunction4={ testfunction4 } inputcheck={ inputTest}/></code></pre>
 상위에 있는 컴포넌트 혹은 데이터를 하위컴포넌트에
 
 변수명={상위컴포넌트의 변수 혹은 함수}
