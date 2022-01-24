@@ -6,7 +6,7 @@
 상위에서 하위로 보낼땐 컴포넌트에 props를 붙여서 표현하게 된다.
 
 
-  <Inputboxtest datas={data} testfunction={bottomup} testfunction2={bottomup2} testfunction3={bottomup3} testfunction4={ testfunction4 } inputcheck={ inputTest}/>
+ <Inputboxtest datas={data} testfunction={bottomup} testfunction2={bottomup2} testfunction3={bottomup3} testfunction4={ testfunction4 } inputcheck={ inputTest}/>
 
 상위에 있는 컴포넌트 혹은 데이터를 하위컴포넌트에
 
