@@ -2,6 +2,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import Inputboxtest from './component/Inputboxtest';
+import Effecttest from './component/Effecttest';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
       {/* 인풋 박스에서 값을 받아와야돼  하위컴포넌트에서 상위컴포넌트로 값을 전달하는 방법. */}
       <Inputboxtest datas={data} testfunction={bottomup} testfunction2={bottomup2} testfunction3={bottomup3} testfunction4={ testfunction4 } inputcheck={ inputTest}/>
       <button>확인하기.</button>
+      <Effecttest/>
     </div>
   );
 }
