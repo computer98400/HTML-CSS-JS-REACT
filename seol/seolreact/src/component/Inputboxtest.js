@@ -15,16 +15,14 @@ export default function Inputboxtest(props) {
         //상위컴포넌트에 있는 inputcheck를 실행시킨것.
         //props.inputcheck(e.target.value);
         props.testfunction4(e.target.value);
-        console.log(input1);
-        
     }
 
 
     return (
         <>
-            <input type="text" onChange={checking}></input>
-            <input type="text" onChange={props.testfunction2}></input>
-            <input type="text" onChange={props.testfunction3}></input>
+            <input type="text" onChange={checking}></input><br/>
+            <input type="text" onChange={props.testfunction2}></input><br/>
+            <input type="text" onChange={props.testfunction3}></input><br/>
         </>
 
 
