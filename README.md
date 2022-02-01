@@ -20,7 +20,8 @@ useEffect의 경우 컴포넌트가 리렌더링될경우 실행되게 된다.
 상위에서 하위로 보낼땐 컴포넌트에 props를 붙여서 표현하게 된다.
 
 ```
-<Inputboxtest datas={data} testfunction={bottomup} testfunction2={bottomup2} testfunction3={bottomup3} testfunction4={ testfunction4 } inputcheck={ inputTest}/> 
+<하위컴포넌트 하위컴포넌트에서 사용할 이름={상위컴포넌트의 데이터} /> 
+<Inputboxtest data={ testData1 } />
 ```
 <br>
 상위에 있는 컴포넌트 혹은 데이터를 하위컴포넌트에
@@ -40,7 +41,11 @@ useEffect의 경우 컴포넌트가 리렌더링될경우 실행되게 된다.
 
 따라서 상위 컴포넌트에 콜백함수형태로 보낸 props에 값을 받아오게 된다.
 ```
-  const inputTest = (testvalue) => {
+  const 돌려받을함수 = (테스트용값) => {
+    console.log("하위 컴포넌트 전달내용 확인용 : ", 테스트용값);
+  }
+
+const inputTest = (testvalue) => {
     console.log("check input", testvalue);    
   }
 ```
@@ -48,9 +53,9 @@ useEffect의 경우 컴포넌트가 리렌더링될경우 실행되게 된다.
 
 다만 하위컴포넌트에선 
 ```
-    const checking = (e) => {
-        props.testfunction4(e.target.value);
-    }
+const checking = (data) => {
+  props.testFunction(data);
+}
 ```    
  props를 통해 상위 컴포넌트의 함수를 접근하여 값을 넘겨주게 된다.
  
