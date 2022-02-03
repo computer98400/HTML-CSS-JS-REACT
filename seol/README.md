@@ -1,6 +1,16 @@
 # ReactStudy
 
 
+## useReducer 공부
+reducer란 현재 상태와 액션 객체를 파라미터로 받아와서 새로운 상태를 반환해주는 함수이다.
+이 reducer를 사용하는 hook이 useReducer이다.
+기본적으로 컴포넌트에 사용 할 수 있는 상태를 가르키고 이후 액션을 발생시키는 함수를 넣어서 표현해준다.
+
+```
+const [state, dispatch] = useReducer(reducer, initState);
+```
+위와 같은 형태로 작성하되, dispatch는 미리 지정해둔 함수를 넣어주게 된다.
+
 ## fetch 공부
 api를 전달받는 과정에서 꼭 axios를 사용해야하는것은 아니다.
 테스트를 하는 과정 혹은 작은 프로젝트의 경우에서 axios를 사용하게 되면 라이브러리를 무조건적으로 추가해야하기 때문에 대신 브라우저 API인 fetch를 통해서 실행 가능한 점이 있다.

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Routes } from 'react-router-dom';
 
 
 export default function Effecttest() {
@@ -98,12 +98,11 @@ export default function Effecttest() {
             <br/>
             <button onClick={clicktest}>{count}</button><br />
             <button onClick={clicktest2}>test2</button><br/>
-            <button onClick={clicktest3}>test3</button><br/>
+            <button onClick={clicktest3}>test3</button><br />
             {
                 testobj.map(data =>(
-                    <span to="#" key={data.id}>test{data.day}  </span>
+                    <a to="#" key={data.id}>test{data.day}  </a>
                 )
-                
                 )
             }
             <br/>
