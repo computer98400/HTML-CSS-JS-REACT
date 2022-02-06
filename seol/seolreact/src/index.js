@@ -4,11 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Historytest from './component/Historytest';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './reducer/rootreducer';
+
+//react를 벗어난 범위
+const store = createStore(rootReducer);
 
 ReactDOM.render(
+  <Provider store={ store}>
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+    </React.StrictMode>
+    </Provider>,
   document.getElementById('root')
 );
 // ReactDOM.render(

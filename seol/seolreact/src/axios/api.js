@@ -7,6 +7,7 @@ const api = apiInstance();
 async function test22(param, success, fail) {
     await api.get(`/test22`).then(success).catch(fail);
 }
+
 async function signin(param, success, fail) {
     await api.post(`/signin`,JSON.stringify(param)).then(success).catch(fail);
 }
@@ -35,5 +36,7 @@ async function signup(param, success, fail) {
  function searchUser(param, success, fail) {
      api.get(`/user`, { team_id: 1 }).then(success).catch(fail);
 }
+
+
 
 export {signin ,profile, signup,test22, insertTeam, searchTeam, searchUser,searchTeamkeyword,searchUserkeyword};
