@@ -7,7 +7,7 @@ function apiInstance() {
         baseURL:  "http://3.36.131.59:8080/",
         headers: {
             "Content-type": "application/json",
-            "Access-Control-Allow-Origin":"*",
+            "Access-Control-Allow-Origin": "*",
         }
     });
     return instance;

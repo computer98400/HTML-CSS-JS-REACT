@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import LoginForm from './LoginForm';
 import { signin,profile } from '../axios/api';
+import Modal from './Modal';
 
 
 
@@ -46,8 +47,10 @@ export default function Login(props) {
         localStorage.setItem("token", test);
     }, [test]);
 
+ 
     return (
         <>
+            
             <LoginForm onChange={changeCheck} onLogin={onLogin} />
             {/* {checklogin ? <LoginCheckingtest /> : ``} */}
         </>

@@ -7,6 +7,7 @@ import Historytest from './component/Historytest';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducer/rootreducer';
+import axios from 'axios';
 
 //react를 벗어난 범위
 const store = createStore(rootReducer);

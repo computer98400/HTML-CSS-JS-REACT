@@ -10,6 +10,9 @@ import TestRouter from './router/TestRouter';
 import Signup from './component/Signup';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
+import Team from './component/Team';
+import CreateTeam from './component/teamComponent/CreateTeam';
+// import ArrayTest from './component/ArrayTest';
 
 function App() {
   // const [data, setData] = useState({
@@ -57,7 +60,9 @@ function App() {
       {/* <Inputboxtest datas={data} testfunction={bottomup} testfunction2={bottomup2} testfunction3={bottomup3} testfunction4={ testfunction4 } inputcheck={ inputTest}/> */}
       {/* <button>확인하기.</button> */}
       {/* <Effecttest /> */}
-      <Login />
+      {/* <Login /> */}
+      <CreateTeam/>
+      {/* <ArrayTest/> */}
       {/* <BrowserRouter>
         <TestRouter />
       </BrowserRouter> */}

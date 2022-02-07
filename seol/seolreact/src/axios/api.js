@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { apiInstance } from './index.js';
 
 
@@ -20,7 +21,7 @@ async function signup(param, success, fail) {
     await api.post(`/signup`,param).then(success).catch(fail);
 }
 
- function insertTeam(param, success, fail) {
+function insertTeam(param, success, fail) {
      api.post(`/team/create/7`,param).then(success).catch(fail);
 }
 
@@ -37,6 +38,17 @@ async function signup(param, success, fail) {
      api.get(`/user`, { team_id: 1 }).then(success).catch(fail);
 }
 
+function dataTest(param,token, success, fail) {
+    api.get(`/headertest`, { headers: {Authorization: `Bearer ${token}`}}).then(success).catch(fail);
+}
+
+function madeTeam(teamid,param, success, fail) {
+    api.post(`/team/create/${teamid}`, { params: { data: param } }).then(success).catch(fail);
+}
+
+function myTeamCheck(param,success, fail) {
+    api.get(`/team/myteam`,{ params: { profile_id: param } }).then(success).catch(fail);
+}
 
 
-export {signin ,profile, signup,test22, insertTeam, searchTeam, searchUser,searchTeamkeyword,searchUserkeyword};
+export {signin ,myTeamCheck,profile, signup,test22, insertTeam, searchTeam, searchUser,searchTeamkeyword,searchUserkeyword, dataTest, madeTeam};
