@@ -9,13 +9,7 @@ export default function Team({props}) {
     });
 
     const createTeam = () => {
-    //insertTeam(, (response) => { console.log(response) }, (error) => { console.log(error) });
-    //팀 데이터 받아야되는것
-    //profile_ID, 조회,수정 삭제시 team_ID 
-    //
-    //팀프로필 수정하기 /team/profile/`team_ID`
-    //title, content
-        console.log(data);
+        
     }
 
     const inputData = (name,value) => {

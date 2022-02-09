@@ -8,7 +8,7 @@ export default function Modal(props) {
         <div className={open? 'openModal modal':'modal'}>
             {open ? (
                 <section>
-                    <header>
+                    <header style={{display: "fixed"}}>
                         {header}
                         <button className='close' onClick={close}>{' '} &times; {' '}</button>
                     </header>

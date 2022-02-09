@@ -61,7 +61,7 @@ function App() {
       {/* <button>확인하기.</button> */}
       {/* <Effecttest /> */}
       {/* <Login /> */}
-      <CreateTeam/>
+      <CreateTeam />
       {/* <ArrayTest/> */}
       {/* <BrowserRouter>
         <TestRouter />
