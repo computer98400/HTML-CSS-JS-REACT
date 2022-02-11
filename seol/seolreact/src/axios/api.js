@@ -50,5 +50,9 @@ function myTeamCheck(param,success, fail) {
     api.get(`/team/myteam`,{ params: { profile_id: param } }).then(success).catch(fail);
 }
 
+function teamdata(param, success, fail) {
+    
+}
+
 
 export {signin ,myTeamCheck,profile, signup,test22, insertTeam, searchTeam, searchUser,searchTeamkeyword,searchUserkeyword, dataTest, madeTeam};

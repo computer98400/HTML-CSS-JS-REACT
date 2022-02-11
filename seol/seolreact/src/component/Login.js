@@ -26,7 +26,9 @@ export default function Login(props) {
     //이부분 
     const onLogin = (e) => {
         signin(input, (response) => { console.log(response) }, (error) => { console.log(error) });
-       // profile('1', (response) => { console.log(response) }, (error) => { console.log(error) });
+        //login test
+        //header에 담기는지
+        // profile('1', (response) => { console.log(response) }, (error) => { console.log(error) });
         //공통 데이터로 올리고, 이후에 페이지 동작?
         // fetch(`http://localhost:3001/login`)
         //     .then(response => {

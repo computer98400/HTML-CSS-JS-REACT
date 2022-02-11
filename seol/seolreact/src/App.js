@@ -12,6 +12,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import Team from './component/Team';
 import CreateTeam from './component/teamComponent/CreateTeam';
+import Flexcss from './component/Flexcss';
 // import ArrayTest from './component/ArrayTest';
 
 function App() {
@@ -61,8 +62,9 @@ function App() {
       {/* <button>확인하기.</button> */}
       {/* <Effecttest /> */}
       {/* <Login /> */}
-      <CreateTeam />
+      {/* <CreateTeam /> */}
       {/* <ArrayTest/> */}
+      <Flexcss/>
       {/* <BrowserRouter>
         <TestRouter />
       </BrowserRouter> */}
