@@ -13,6 +13,7 @@ import { Provider } from 'react-redux';
 import Team from './component/Team';
 import CreateTeam from './component/teamComponent/CreateTeam';
 import Flexcss from './component/Flexcss';
+import Mafia from './component/mafia/Mafia';
 // import ArrayTest from './component/ArrayTest';
 
 function App() {
@@ -64,7 +65,7 @@ function App() {
       {/* <Login /> */}
       {/* <CreateTeam /> */}
       {/* <ArrayTest/> */}
-      <Flexcss/>
+      <Mafia/>
       {/* <BrowserRouter>
         <TestRouter />
       </BrowserRouter> */}

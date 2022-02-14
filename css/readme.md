@@ -16,6 +16,9 @@ flex로 지정된 DOM객체의 내부 객체들을 세로로 나열할 것인가
 ```
 flex-direction: row
 flex-direction: column
+flex-direction: row-reverse
+flex-direction: column-reverse
 ```
 
-## flex 
+## flex-wrap
+flex속성에서 
