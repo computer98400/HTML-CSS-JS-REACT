@@ -21,8 +21,66 @@ console.log(typeof y, y);
 
 중요한 것은 코드를 예측할 수 있어야 한다는 것
 
+<b>암묵적 타입 변환</b><br>
+표현식을 평가 할 때 개발자의 의도와는 상관없이 코드의 문맥을 고려해 암묵적으로 데이터 타입을 강제 변환 할때가 있다.
+```
+'10'+ 2 //피연산자가 모두 문자열 타입이어야 하는 문맥
+
+5 * '10' // 피연산자가 모두 숫자 타입이어야 하는 문맥
+
+!0       //피연산자 또는 표현식이 불리언 타입이어야 하는 문맥
+if(1){}
+```
+암묵적 타입 변환이 발생하면 문자열, 숫자, 불리언과 원시 타입중 하나로 타입을 자동 변환한다.
+
+<b>문자열 타입 변환</b> +연산자의 경우 피연산자 중 하나 이상이 문자열이므로 문자열 연결 연산자로 동작한다.
+문자열 연결 연산자의 모든 피연산자는 코드의 문맥상 모두 문자열 타입이어야 한다.
+자바 스크립트 엔진은 문자열 연결 연산자 표현식을 평가하기 위해 문자열 연결 연산자의 피연산자 중에서 문자열 타입이 아닌 피연산자를 문자열 타입으로 암묵적 타입 변환한다.
+
+ES6에서 도입된 템플릿 리터럴의 표현식 삽입은 표현식의 평가 결과를 문자열 타입으로 암묵적 타입 변환 된다.
+```
+`1 + 1 = ${1 + 1}` //-> "1+1 = 2
+```
+-    중요한 점은 평가 결과를 문자열 타입으로 변환하게 된다는 것<br>
 
 
+<table>
+<tr>
+<td>
+숫자 타입<br>
+0 + ' ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // "0"<br>
+-0 + ' '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // "0"<br>
+1+' '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // "1"<br>
+-1+' '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // "-1"<br>
+NaN+' '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // "NaN"<br>
+Infinity+' '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // "Infinity"<br>
+-Infinity+' '&nbsp;&nbsp;&nbsp;&nbsp; // "-Infinity"<br>
+</td>
+<td>
+불리언 타입<br>
+true + ' ' // true<br>
+false+' ' //false<br><br>
+null 타입<br>
+null + ' ' //"null"<br><br>
+undefined 타입<br>
+undefined + ' ' //"undefined"
+</td>
+<td>
+심벌 타입<br>
+(Symbol()) + ' ' // TypeError<br>
+<br>
+객체타입<br>
+({})+' '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//"[Object, Object]"<br>
+Math+' ' //"[Object Math]"<br>
+[]+ ' ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// " " <br>
+[10,20]+' ' //"10,20"<br>
+(function(){})+' ' //"function(){}"<br>
+Array + ' ' //"function Array() {[native code]}
+</td>
+</tr>
+</table>
+
+숫자 타입으로 변환
 
 
 ## 220210
