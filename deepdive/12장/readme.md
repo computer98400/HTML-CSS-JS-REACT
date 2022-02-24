@@ -251,9 +251,24 @@ length 프로퍼티는 함수 정의 시 작성된 매개변수 갯수를 의미
 ## __proto__ 접근자 프로퍼티
 프로토타입 객체란 프로토타입 기반 객체 지향 프로그래밍의 근간을 이루는 객체로서 객체간의 상속을 구현하기 위해 사용된다. 즉, 프로토타입 객체는 다른 객체에 공유 프로퍼티를 제공하는 객체를 말한다.
 __proto__프로퍼티는 [[Prototype]] 내부 슬롯은 프로토타입 객체를 가르킨다. 
+```
+console.log({}.__proto__ === Object.prototype) // true
+```
+__proto__ 프로퍼티는 객체가 직접 소유하는 프로퍼티가 아니라 모든 객체의 프로토타입 객체인 Object.prototype 객체의 프로퍼티이다. 모든 객체는 상속을 통해 __proto__접근자 프로퍼티는 사용할 수 있다.
 
+> 함수형 언어에서의 상속은 __proto__를통해서 접근한다고 생각하자.
 
-> 6.5~~내용은 좀더 작성해야한다.
+## prototype 프로퍼티
+prototype 프로퍼티는 함수 객체만이 소유하는 프로퍼티이다. 즉 일반 객체에는 prototype 프로퍼티가 없다.
+```
+//함수 객체는 prototype 프로퍼티를 소유한다.
+console.log(Object.getOwnPropertyDescriptor(function() {}, 'prototype'));
+//{value: {...}, writable: true, enumerable: false, configurable: false}
+
+//일반 객체의 경우는 prototype 프로퍼티를 소유하지 않는다.
+console.log(Object.getOwnPropertyDescriptor({}, 'prototype'));
+//undefined
+```
 
 
 # 함수의 다양한 형태
@@ -275,5 +290,65 @@ __proto__프로퍼티는 [[Prototype]] 내부 슬롯은 프로토타입 객체�
     return a * b;
 }());
 
+//SyntaxError : Unexpected token // 1
+function () {
+
+}();
+
+// 따라서 즉시 실행 함수는 소괄호로 감싸준다.
+(function () {
+
+}())
+
+(function () {})();
+```
+- 함수 선언문은 자바스크립트 엔진에 의해 함수 몸체를 닫는 중괄호 뒤에 ;가 자동 추가된다.
+
+자바스크립트에서 가장 큰 문제점 중의 하나는 파일이 분리되어 있다하여도 글로벌 스코프가 하나이며 글로벌 스코프에 선언된 변수나 함수는 코드 내의 어디서든지 접근이 가능하다는 것이다.
+따라서 다른 스크립트 파일 내에서 동일한 이름으로 명명된 변수나 함수가 같은 스코프 내에 존재할 경우 원치 않는 결과를 가져올 수 있다.
+
+> jQuery와 같은 라이브러리의 경우, 코드를 즉시 실행 함수 내에 정의해 두면 라이브러리의 변수들이 독립된 영역 내에 있게 되므로 여러 라이브러리들은 동시에 사용하더라도 변수명 충돌과 같은 문제를 방지할 수 있다.
+
+## 내부 함수
+함수 내부에 정의된 함수를 내부함수라 한다.
+내부함수 child는 자신을 포함하고 있는 부모함수 parent의 변수에 접근할 수 있다. 하지만 부모함수는 자식함수(내부함수)의 변수에 접근할 수 없다.
+또한 내부함수는 부모함수의 외부에서 접근할 수 없다.
+```
+function parent(param){
+    var parentVar = param;
+    function child() {
+        var childVar = 'lee';
+        console.log(parentVar + ' ' + childVar); // Hello lee
+    }
+    child();
+    console.log(parentVar + ' '+childVar);  // Uncaught ReferenceError
+}
+parent('hello');
+child() //child is not defined
+```
+
+## 재귀 함수
+자기 자신을 호출하는 함수를 말한다.
 
 ```
+fibonacci(n){
+    if(n <2) return n;
+    return fibonacci(n-1)+fibonacci(n-2);
+}
+```
+
+> 대부분의 재귀함수는 for나 while문으로 구현이 가능하다. 반복문보다 재귀함수를 통해 보다 직관적으로 이해하기 쉬운 구현이 가능한 경우에만 한정적으로 적용하는 것이 바람직하다.
+
+
+## 콜백 함수
+함수를 명시적으로 호출하는 방식이 아니라 특정 이벤트가 발생했을 때 시스템에 의해 호출되는 함수를 말한다.
+콜백함수는 주로 이벤트 핸들러 처리이다.
+```
+var button = document.getElementById('myButton');
+button.addEventListener('click', function(){
+    console.log('button clicked!');
+})
+```
+> 콜백함수에 대해선 더욱 정확한 이해가필요하다. 이후에 다시 다뤄야겠다.
+
+
