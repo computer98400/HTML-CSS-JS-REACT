@@ -99,5 +99,4 @@ console.log(Array.isArray([]));     //true
 console.log(Array.isArray({}));     //false
 console.log(Array.isArray('123'));  //false
 ```
-
 유사 배열 객체는 length 프로퍼티를 갖는 객체로 문자열, arguments, HTMLCollection, NodeList 등은 유사 배열이다. length 프로퍼티가 잇으므로 순회할 수 있으며 call, apply 함수를 사용하여 배열의 메소드를 사용할 수도 있다.
