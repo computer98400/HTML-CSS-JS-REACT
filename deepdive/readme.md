@@ -1,3 +1,7 @@
+
+# apply, call, bind
+
+
 ## 9장 타입 변환과 단축 평가
 
 자바스크립트의 모든 값은 타입이 있다. 값의 타입은 개발자의 의도에 따라 다른 타입으로 변환할 수 있다. 
@@ -153,4 +157,7 @@ ASI : 세미콜론을 자동으로 삽입해주는 기능 - 다만 사용자가 
 원시타입
 number String boolean undefined null symbol object
 
- 
+
+
+
+
