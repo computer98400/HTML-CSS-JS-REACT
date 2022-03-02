@@ -141,10 +141,25 @@ var obj = {
         }
         bar.apply(obj, [1,2]);
         bar.call(obj, 1,2);
-        bar.bind(obj)(1,2);
+        bar.bind(obj)(1,2);         //1
     }
 }
 obj.foo();
+```
+- apply와 call의 경우 함수를 호출하는 함수이다. 이때 첫번째 인자로 `this`로 가르키고싶은 객체를 넘겨주게 된다.
+- call의 경우 첫번째 인자를 제외하고 이후 parameter를 입력해준다.
+- apply의 경우 첫번째 인자를 제외하고 이후 배열 형식으로 넣어줘야한다는 차이가 있다.
+- buid의 경우 함수를 실행하지 않는다. 따라서 `this`로 가르키고자 하는 함수를 바인딩해준뒤 이후에 사용하여도 상관없게된다.
+
+bind관련 내용
+```
+const obj = {name: 'Tom'};
+const say = function(city){
+    console.log(`Hello, my name is ${this.name}, I live in ${city}`);
+
+const boundSay = say.bind(obj);
+boundSay("seoul");
+}
 ```
 
 

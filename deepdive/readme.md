@@ -1,6 +1,17 @@
-
 # apply, call, bind
+Function.prototype의 메소드로써 모두 상위 객체와 하위 객체를 연결하는 역할을 하게된다.
+이때 차이점으론 apply과 call의 경우 첫번째 인자로 상위 객체를 넣어주고, 이후 해당 하위 객체에 필요한 인수들을 표시를 하면 된다.
+```
+child.apply(parent, a, b);
+child.call(parent, [a, b]);
+```
+이후 해당 함수를 실행하게 된다.
 
+하지만 bind의 경우엔 함수를 실행하진 않는다. 따라서 변수를 정의해주고 이후 언제든 불러서 사용하게 된다.
+```
+var bindTest = child.bind(parent)
+bindTest("인수");
+```
 
 ## 9장 타입 변환과 단축 평가
 
