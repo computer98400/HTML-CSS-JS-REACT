@@ -18,17 +18,17 @@ const tokenCHECK = (state = initialState, action) => {
     //console.log(action);
     switch (action.type) {
         case ADDTK:
-            console.log("check", action.diff);
+            // console.log("check", action.diff);
             return {
                 token: action.diff
             };
         case DELETETK:
-            console.log("check222", action.diff);
+            // console.log("check222", action.diff);
             return {
                 token: ''
             };
         default:
-            console.log("check3333", action.diff);
+            // console.log("check3333", action.diff);
             return state;
     }
 }
