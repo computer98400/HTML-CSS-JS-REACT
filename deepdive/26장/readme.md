@@ -105,6 +105,18 @@ const regexr5 = /[\W,]+/g;
 
 console.log(targetStr.match(regexr5));
 
+const fileName = 'index.html';
+
+const regexr = /html$/;
+console.log(regexr.test(fileName));
+
+const targetStr = '12345';
+
+const regexr = /^\d+$/;
+
+console.log(regexr.test(targetStr));
+
 
 ```
+
 
