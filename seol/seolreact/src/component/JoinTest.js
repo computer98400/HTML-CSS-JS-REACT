@@ -2,16 +2,25 @@ import React, { useEffect, useState} from 'react';
 import styled from 'styled-components'
 
 export default function JoinTest() {
+    
+    //리팩토링 하겠다..
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
+
+    //member라는덩어리로 만들어주는 작업.
+
     const [idmention, setIdmention] = useState('');
     const [pwmention, setPwmention] = useState('');
     const [emailmention, setEmailmention] = useState('');
+    
     const [idcheck, setIdcheck] = useState(false)
     const [pwcheck, setPwcheck] = useState(false)
     const [emailcheck, setEmailcheck] = useState(false)
+
     const [total, setTotal] = useState(false)
+
+    
     useEffect(() => {
         if (idcheck, pwcheck, emailcheck) {
             setTotal(true)
@@ -25,7 +34,7 @@ export default function JoinTest() {
     //아이디 유효성 검사    
     useEffect(() => {
         const regSize = /.{4,10}$/;
-        const regID = /[^A-Za-z0-9]/gi;
+        const regID = /[^A-Za-z0-9]/gi; // \w
         if (!regID.test(id) && regSize.test(id)) {
             setIdcheck(true);
             setIdmention('');
