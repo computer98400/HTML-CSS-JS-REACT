@@ -1,3 +1,33 @@
+# shallow copy와 deep copy
+- shallow copy : 객체가 가지고 있는 필드값을 단순히 복사하게된다. 이때 참조형 변수는 같은 객체를 가리키게 된다.
+- deep copy : 객체가 가지고 있는 필드의 값을 복사해준다. 이 때, 기본형 값들은 그대로 복사가 되며 참조형 변수의 경우 변수가 참조하는 객체에 대해서도 새롭게 복사해서 만들어준다.
+
+
+# push와 concat
+```
+const arr = new Array(3,4);
+const arr2 = new Array(1,2);
+
+let result1 = arr.concat(arr2);
+console.log(result1);
+
+let result2 = arr.push(arr2);
+console.log(result2);
+
+```
+
+
+# for..in문과 for..of문
+## for..in문
+열거할 수 있는 프로퍼티를 순회할 수 있도록 해준다.
+> 열거할 수 있는 프로퍼티? : 내부적으로 enumerable 플래그가 true로 설정된 프로퍼티를 의미한다.
+
+## for..of문(explorer 지원 X)
+반복할수잇는 객체를 순회할 수 있도록 해주는 반복문이다.
+> 반복할수 있는 객체? : Array, Map, Set, arguments 객체 등등..
+
+
+
 # 유사배열
 length를 포함하고 있는 배열과 유사한 형태의 객체
 대표적인 유사배열 객체 DOM, arguments...
