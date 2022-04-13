@@ -44,3 +44,21 @@ console.log(Object.getOwnPropertyDescriptors({1:11,2:22,3:33}));
 console.log(Object.getOwnPropertyDescriptors([1, 2, 3]));
 
 console.log(Array.from("test"));
+
+console.time("V8 ArrayTest");
+a = new Array();
+for (var b = 0; b < 10; b++) {
+    a[0] |= b;  // 안 좋아요!
+}
+
+console.timeEnd("V8 ArrayTest");
+
+//vs.
+
+console.time("V82 ArrayTest");
+a = new Array();
+a[0] = 0;
+for (var b = 0; b < 10; b++) {
+    a[0] |= b;  // 훨씬 좋습니다. 2배 더 빨라요.
+}
+console.timeEnd("V82 ArrayTest");
