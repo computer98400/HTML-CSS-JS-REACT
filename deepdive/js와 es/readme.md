@@ -45,7 +45,7 @@ ECMAScript 사양을 준수하는 범용 스크립트 언어이다.
 
 # SpiderMonkey버전 정보
 ![image](https://user-images.githubusercontent.com/62691610/163712189-498793b3-95b6-4ab8-b2b9-6501a6c3ebbc.png)
-- ES5가 적요된 시점을 확인할 수 있었습니다.
+- ES5가 적용된 시점을 확인할 수 있었습니다.
 
 
 ![image](https://user-images.githubusercontent.com/62691610/163712907-5f9540a3-43df-46bc-9e79-94898436aca4.png)
@@ -53,9 +53,12 @@ ECMAScript 사양을 준수하는 범용 스크립트 언어이다.
 
 
 # Babel
+![image](https://user-images.githubusercontent.com/62691610/163713017-422d3bd1-41f1-4d76-90db-53d86b7b5019.png)
+
 > Babel is a JavaScript compiler.
 
 babel은 자바스크립트 컴파일러이다. 이는 각기 다른 버전의 코드간의 호환성을 적용시켜주는 역할을 하게 된다. (ES6 -> ES5)
 ES6부터 만들어진 Class, Arrow function등을 이전 버젼으로 낮춰주는 역할
 
 
+## [컴파일러와 인터프리터의 차이점을 알고싶다구요?](https://pleasant-skate-6bb.notion.site/1112-interpreter-compile-e22a473985c840e0b703e23901542c5b)
