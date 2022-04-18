@@ -3,12 +3,41 @@
 //Array로 선언했을 경우 속도
 const arr = [];
 
-console.time('Array Performance Test');
+console.time('if else test');
 
-for(let i =0; i< 10000000; i++){
-    arr[i] = i;
+const flag = true;
+let a = 0;
+
+for (let i = 0; i < 10000000; i++){
+    if (flag) {
+        a = 10;        
+    } else {
+        a = 5;
+    }
 }
-console.timeEnd('Array Performance Test');
+
+console.timeEnd('if else test');
+
+console.time('삼항 연산자 test');
+const flag2 = true;
+let a2 = 0;
+for(let i =0; i< 10000000; i++){
+    a2 = flag2 ? 10 : 5;
+}
+console.timeEnd('삼항 연산자 test');
+
+
+console.time('단축 평가 test');
+const flag3 = true;
+let a3 = 0;
+for (let i = 0; i < 10000000; i++){
+    a3 = '' || !flag3
+}
+console.timeEnd('단축 평가 test');
+
+
+
+
 
 
 //object로 선언했을 경우 속도
