@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<button onclick="sayHi('Lee')">Click</button>
+<button onclick="sayHi(event)">Click</button>
 <button id="prop">Click</button>
 <button id="prop2">Click</button>
 
@@ -17,13 +17,22 @@
     }
 
     var btn = document.getElementById('prop');
+    // btn.onclick = sayHi('name');
     btn.onclick = function(){
         console.log("button click");
     }
+    
+    btn.onclick = function(){
+        console.log("button click2");
+    }
+
+    btn.onclick = null;
+
 
 
     var btn2 = document.getElementById('prop2');
-    btn2.addEventListener('click', function(){
+    btn2.addEventListener('click', function(e){
+        console.log(e.target.value);
         console.log("click1");
     })
 
@@ -31,7 +40,7 @@
     function handleCheck(){
         console.log("hi remove test");
     }
-    // btn2.removeEventListener('click',handleCheck);
+    btn2.removeEventListener('click',handleCheck);
 
 </script>
 </body>
