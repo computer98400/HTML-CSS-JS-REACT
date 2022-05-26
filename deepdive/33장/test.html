@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="sayHi(event)">Click</button>
+<button id="prop">Click</button>
+<button id="prop2">Click</button>
+
+<script>
+    function sayHi(name){
+        console.log(`Hi! ${name}`);
+    }
+
+    var btn = document.getElementById('prop');
+    // btn.onclick = sayHi('name');
+    btn.onclick = function(){
+        console.log("button click");
+    }
+    
+    btn.onclick = function(){
+        console.log("button click2");
+    }
+
+    btn.onclick = null;
+
+
+
+    var btn2 = document.getElementById('prop2');
+    btn2.addEventListener('click', function(e){
+        console.log(e.target.value);
+        console.log("click1");
+    })
+
+    btn2.addEventListener('click', handleCheck);
+    function handleCheck(){
+        console.log("hi remove test");
+    }
+    btn2.removeEventListener('click',handleCheck);
+
+</script>
+</body>
+</html>
