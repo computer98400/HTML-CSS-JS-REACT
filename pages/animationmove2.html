@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        .multiplemove{
+            width:200px;
+            height:100px;
+            position: relative;
+            left:200;
+        }
+
+        .multiplemove.check{
+            width:200px;
+            height:100px;
+            animation-name: check;
+            animation-duration: 1s;
+        }
+        @keyframes check {
+            from {
+                left: 100px;
+            }
+            to{
+                left:0px
+            }
+        }
+        #navigation{
+            width: 1000px;
+            height: 200px;
+        }
+    </style>
+    <body>
+        <div id="navigation">
+        <button class="multiplemove">test1</button>
+        <button class="multiplemove">test1</button>
+        <button class="multiplemove">test1</button>
+        <button class="multiplemove">test1</button>
+        <button class="multiplemove">test1</button>
+        <button class="multiplemove">test1</button>
+        </div>
+        <script>
+            var datas = document.getElementById('navigation');
+            console.log(datas.children);
+            console.log(...datas.children);
+            for(let test of datas.children){
+                test.classList.remove('check');
+                void test.offsetWidth;
+                test.classList.add('check');
+            }
+        </script>
+
+</body>
+
+</html>

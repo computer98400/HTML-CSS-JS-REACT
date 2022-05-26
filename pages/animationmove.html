@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    .testbutton {
+        border-color: rgba(0,0,0,0.1);
+        opacity: 0.5;
+        color: white;
+        position: relative;
+        background-color: rgb(241, 26, 18); 
+    }
+    .testbutton.movehorizen{
+        animation-name: slidehorizen;
+        animation-duration: 1s;
+        border-color: rgba(0,0,0,0.1);
+        opacity: 0.5;
+        color: white;
+        background-color: rgb(241, 26, 18);
+    }
+
+    .testbutton.movevertical{
+        animation-name: slidevertical;
+        animation-duration: 1s;
+        border-color: rgba(0,0,0,0.1);
+        opacity: 0.5;
+        color: white;
+        background-color: rgb(241, 26, 18);
+    }
+    @keyframes slidehorizen{
+        from{
+            left : 100%;
+        }
+        to{
+            left: 0%;
+        }
+    }
+    @keyframes slidevertical{
+        from{
+            top : 100%;
+        }
+        to{
+            top: 0%;
+        }
+    }
+    .testbutton:active{
+        transform: scale(2);
+        background-color: rgb(58, 243, 61);
+    }
+    #testdiv{
+        width: 500px;
+        height:100px;
+    }
+</style>
+<body style="overflow-x: hidden;">
+    <div id="testdiv">
+    <button class="testbutton">test</button>
+    <br>
+    <button class="testbutton2" onclick="movehorizen()">움직임 제어</button>
+    <button class="testbutton2" onclick="movevertical()">움직임 제어</button>
+    </div>
+    <script>
+        var button = document.getElementsByClassName('testbutton2')[0];
+        var object = document.getElementsByClassName('testbutton')[0];
+        
+        const movehorizen  = () => {
+            object.classList.remove('movehorizen', 'movevertical');
+            void object.offsetWidth;
+            object.classList.add('movehorizen');
+        }
+
+        const movevertical  = () => {
+            object.classList.remove('movehorizen', 'movevertical');
+            void object.offsetWidth;
+            object.classList.add('movevertical');
+        }
+
+
+    </script>
+
+
+</body>
+</html>
