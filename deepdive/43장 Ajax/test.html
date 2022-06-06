@@ -19,12 +19,15 @@
             a.setRequestHeader('Content-type', 'application/json');
             
             a.timeout = 5000;
+
             a.onabort =() =>{
                 console.log("abort");
             }
+
             a.onerror = () =>{
                 console.log("err!");
             }
+
             a.send();
 
             a.onreadystatechange = function (event) {
@@ -41,6 +44,7 @@
                 }
             }
         }
+        
         let postTest = function (){
             var a = new XMLHttpRequest();
             

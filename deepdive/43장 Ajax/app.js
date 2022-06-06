@@ -5,6 +5,8 @@ const app = express();
 const port = 3000;
 
 app.use(cors());
+
+
 app.get("/" ,(req,res)=>{
     res.send('hello world');
 })
@@ -19,7 +21,7 @@ app.post('/test1', function(req, res){
     console.log('post요청을 받았다!');
 
     res.send("testsetetsset");
-  });
+});
 
 app.get("/test2" ,(req,res)=>{
     res.send('hello world333');
