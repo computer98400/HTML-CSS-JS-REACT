@@ -7,26 +7,70 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="clickTest()">XMLHttpRequest</button>
+    <button onclick="getTest()">XMLHttpRequest</button>
+    <button onclick="postTest()">XMLHttpRequest</button>
     <script>
-        let clickTest = function (){
-            var a = new XMLHttpRequest;
+        let getTest = function (){
+            var a = new XMLHttpRequest();
             
-            a.open('GET','http://127.0.0.1:3000/test1',true);
+            a.open("GET",'http://localhost:3000/test1',true);
             // a.setRequestHeader('Access-Control-Allow-origin','*');
             console.log("chek111");
             a.setRequestHeader('Content-type', 'application/json');
             
-            a.timeout = 100000;
-            
-            a.onreadystatechange = ()=>{
-                console.log("check", a.readyState);
+            a.timeout = 5000;
+            a.onabort =() =>{
+                console.log("abort");
             }
             a.onerror = () =>{
                 console.log("err!");
             }
-            console.log(a);
             a.send();
+
+            a.onreadystatechange = function (event) {
+                const { target } = event;
+                if (target.readyState === XMLHttpRequest.DONE) {
+                    const { status } = target;
+                    if (status === 0 || (status >= 200 && status < 400)) {
+                        // 요청이 정상적으로 처리 된 경우
+                        console.log(target);
+                    } else {
+                        // 에러가 발생한 경우
+                        console.log("error!!!");
+                    }
+                }
+            }
+        }
+        let postTest = function (){
+            var a = new XMLHttpRequest();
+            
+            a.open("POST",'http://localhost:3000/test1',true);
+            // a.setRequestHeader('Access-Control-Allow-origin','*');
+            console.log("chek111");
+            a.setRequestHeader('Content-type', 'application/json');
+            
+            a.timeout = 5000;
+            a.onabort =() =>{
+                console.log("abort");
+            }
+            a.onerror = () =>{
+                console.log("err!");
+            }
+            a.send();
+
+            a.onreadystatechange = function (event) {
+                const { target } = event;
+                if (target.readyState === XMLHttpRequest.DONE) {
+                    const { status } = target;
+                    if (status === 0 || (status >= 200 && status < 400)) {
+                        // 요청이 정상적으로 처리 된 경우
+                        console.log(target);
+                    } else {
+                        // 에러가 발생한 경우
+                        console.log("error!!!");
+                    }
+                }
+            }
         }
     </script>
 
