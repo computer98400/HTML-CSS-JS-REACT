@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clickTest()">XMLHttpRequest</button>
+    <script>
+        let clickTest = function (){
+            var a = new XMLHttpRequest;
+            
+            a.open('GET','http://127.0.0.1:3000/test1',true);
+            // a.setRequestHeader('Access-Control-Allow-origin','*');
+            console.log("chek111");
+            a.setRequestHeader('Content-type', 'application/json');
+            
+            a.timeout = 100000;
+            
+            a.onreadystatechange = ()=>{
+                console.log("check", a.readyState);
+            }
+            a.onerror = () =>{
+                console.log("err!");
+            }
+            console.log(a);
+            a.send();
+        }
+    </script>
+
+
+</body>
+</html>
