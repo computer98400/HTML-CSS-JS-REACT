@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input2" type="text">
+    <p id="result"></p>
+    <button onclick="clickcheck()">click get test</button>
+    <script>
+        const input = document.getElementById('input2');
+        const p = document.getElementById('result');
+        const getmethod = url =>{
+            return new Promise((resolve, reject) =>{
+                const xhr = new XMLHttpRequest();
+                if(url){
+                    xhr.open('get',url);
+                    xhr.send();
+                    xhr.onload = () =>{
+                        if(xhr.status == 200){
+                            resolve(xhr.response);
+                            
+                        }else{
+                            reject("not found check");
+                        }
+                    }
+                }else{
+                    reject("uri를 입력해주세요!");
+                }
+            })
+        }
+        function clickcheck(){
+            console.log(input.value);
+            getmethod(`http://localhost:3000/${input.value}`).then(result =>{
+                p.innerText = result;
+            }).catch(error => {
+                console.log("catch error : ", error);
+                p.innerText = result;
+            });
+        }
+
+
+
+    </script>
+</body>
+</html>

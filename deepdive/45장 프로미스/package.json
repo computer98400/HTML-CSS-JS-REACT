@@ -1,0 +1,15 @@
+{
+  "name": "testserver",
+  "version": "1.0.0",
+  "description": "비동기 처리를 위한 하나의 패턴으로 콜백 함수를 사용하지만 가독성이 나쁘고 비동기 처리 중 발생한 에러의 처리가 곤란하여 여러 개의 비동기 처리를 한번에 처리하는 데도 한계가 있다.\r 따라서 ES6부터 비동기 처리를 위한 또 다른 패턴으로 프로미스를 도입했다.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}
