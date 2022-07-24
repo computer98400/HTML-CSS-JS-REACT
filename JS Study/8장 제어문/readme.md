@@ -48,9 +48,88 @@ switch문과 if..else문의 차이는 논리적 참, 거짓보다 다양한 상�
 ## 반복문
 조건식의 평가 결과가 참인 경우 코드 블록을 실행한다. 그 후 조건식을 다시 평가하여 여전히 참인 경우 코드블록을 다시 실행한다. 이는 조건식이 거짓일 때까지 반복된다.
 
+for문과 while문 그리고 do..while문으로 구성된 반복문의 경우 예시를 통해 흐름을 이해하는 것이 더 중요하다. 따라서 예시 코드를 통한 설명을 진행한다.
+
 ### for 문
 ```
 for(변수 선언문 또는 할당문; 조건식; 증감식){
     조건식이 참인 경우 반복 실행될 문;
+}
+
+for(var i=0; i<2; i++){
+    console.log(i);
+}
+
+
+for(var i=0; i<2; ++i){
+    console.log(i);
+}
+
+for(;;){
+    console.log(i);
+}
+
+for(var j =0; ;j++){
+    console.log(j);
+}
+
+```
+
+### while문
+```
+while(조건식){
+    //조건식이 참인 경우 반복 실행될 문;
+}
+
+while(true){
+    console.log("조건식이 참입니다.");
+}
+
+var i =0;
+while( i< 3){
+    console.log("조건식이 참입니다." , i);
+}
+
+```
+
+### do...while문
+```
+do{
+    //코드를 1회에 한해서 실행한다.
+    //이후 조건식이 참일 경우 실행한다.
+}while(조건식);
+
+
+var i=0;
+
+do{
+    console.log(i);
+    i+=3;
+}while(i > 3);
+```
+
+## break문
+break문의 경우 코드 블록을 탈출하게 된다. 정확히는 반복문, 레이블 문을 탈출하는 것이다. 만약 switch문의 코드 블록 이외의 break문을 사용시 SyntaxError가 발생하게된다.
+
+```
+if(true){
+    break; //??
+}
+
+foo : {
+    console.log(1);
+    break foo;
+    console.log(2);
+}
+
+```
+
+
+## continue문
+반복문의 코드 블록 실행을 현 지점에서 중단하고 반복문의 증감식으로 실행 흐름을 이동시킨다.
+```
+for(var i=0; i< 10; i++){
+    if(i%2 == 0) continue;
+    console.log(i);
 }
 ```
