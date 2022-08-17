@@ -40,12 +40,8 @@ add(2,5);
 함수를 호출하기 이전에 인수를 전달받을 매개변수와 실행할 문들, 그리고 반환할 값을 지정하는 것을 말한다.
 |함수 정의 방식|예시|
 |-|-|
-|함수 선언문|```function add(x,y){
- return x+y;
- }```|
- |함수 표현식|```var add = function(x,y){
- return x+y;
- }```|
+|함수 선언문|function add(x,y){<br>return x+y;<br> }<br>|
+ |함수 표현식|var add = function(x,y){<br>     return x+y;<br> }<br>|
  |Function 생성자 함수|var add = new Function('x','y','return x+y');|
  |화살표 함수(ES6)|var add = (x,y) => x+y;|
  
