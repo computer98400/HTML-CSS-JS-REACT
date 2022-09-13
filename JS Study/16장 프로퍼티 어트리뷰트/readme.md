@@ -83,3 +83,83 @@ descriptor = Object.getOwnPropertyDescriptor(person,'fullName');
 console.log(descriptor);
 ```
 
+위의 코드에서 접근자 프로퍼티 fullName으로 접근시 내부적으로 메서드가 호출되는 동작은 다음과 같다.
+1. 프로퍼티키가 유효한지 확인한다.
+2. 프로토타입 체인에서 프로퍼티를 검색한다.
+3. 검색된 fullName 프로퍼티가 데이터 프로퍼티인지 접근자 프로퍼티인지 확인한다.
+4. 접근자 프로퍼티 fullName의 프로퍼티 어트리뷰트 [[Get]]의 값, 즉 getter 함수를 호출하여 그 결과를 반환한다.
+
+## 프로퍼티 정의
+새로운 프로퍼티를 추가하면서 프로퍼티 어트리뷰트를 명식적으로 정의하거나, 기존 프로퍼티의 프로퍼티 어트리뷰트를 재정의하는 것을 말한다. 
+```
+const person = {};
+Object.defineProperty(person, 'firstName',{
+  value : 'Ungmo',
+  writable : true,
+  enumerable: true,
+  configurable: true
+});
+```
+프로퍼티는 defineProperty를 통해 정의할 수 있다. 이는 해당 프로퍼티의 어트리뷰트값을 임의적으로 정의할 수 있다. 이때 각 어트리튜브값은 생략될 수 있으며 기본값으로 undefined 혹은 false 값이 추가되게 된다.
+
+|프로퍼티 디스크립터 객체의 프로퍼티|대응하는 프로퍼티 어트리뷰트|생략했을 때의 기본값|
+|-|-|-|
+|value|[[Value]]|undefined|
+|get|[[Get]]|undefined|
+|set|[[Set]]|undefined|
+|writable|[[Writable]]|false|
+|enumerable|[[Enumerable]]|false|
+|configurable|[[Configurable]]|false|
+
+## 객체 변경 방지
+객체는 변경 가능한 값이므로 재할당 없이 직접 변경할 수 있다. 즉, 프로퍼티를 추가하거나 삭제할 수 있고, 프로퍼티 값을 갱신할 수 있으며, Object.defineProperty또는 Object.defineProperties 메서드를 사용하여 프로퍼티 어트리뷰트를 재정의할 수도 있다.
+
+객체의 변경 방지를 위해 자바스크립트는 다양한 메서드를 제공한다. 해당 메서드들은 객체의 변경을 금지하는 강도에 따라 다르다.
+|구분|메서드|추가|삭제|값 읽기|값 쓰기|어트리뷰트 재정의|
+|-|-|-|-|-|-|-|
+|객체 확장 금지|Object.preventExtensions|X|O|O|O|O|
+|객체 밀봉|Object.seal|X|X|O|O|X|
+|객체 동결|Object.freeze|X|X|O|X|X|
+
+### 객체 확장 금지
+객체의 확장 금지란 프로퍼티 추가 금지를 의미한다. 해당 객체가 확장 간으한 객체인지 여부는 Object.isExtensible 메서드로 확인할 수 있다.
+```
+//객체 확장 금지 여부 확인.
+Object.isExtensible(객체);
+
+//객체 확장 금지 적용
+Object.preventExtensions(객체);
+
+```
+
+### 객체 밀봉
+객체 밀봉이란 프로퍼티 추가 및 삭제와 프로퍼티 어트리뷰트 재정의를 금지한다. 즉 읽기 쓰기만 가능하다.
+```
+//객체 밀봉 여부 확인 메서드
+Object.isSealed(객체);
+
+//객체 밀봉 적용
+Object.seal(객체);
+
+```
+
+### 객체 동결
+프로퍼티 추가 및 삭제와 프로퍼티 어트리뷰트 재정의 금지, 프로퍼티 값 갱신 금지를 의미한다. 즉, 동결된 객체는 읽기만 가능하다.
+```
+//객체 동결 여부 확인 메서드
+Object.isFrozen(객체);
+
+//객체 동결 적용
+Object.freeze(객체);
+```
+
+### 불변 객체
+지금까지의 변경방지 메서드는 직속 프로퍼티만 변경이 방지되고 중첩 객체까지는 영향을 주지는 못한다. 따라서 중첩 객체까지의 변경을 불가능하게 만들려면 재귀적으로 모든 프로퍼티에 Object.freeze 메서드를 호출해야한다.
+```
+function deepFreeze(target){
+  if(target && typeof target == 'object' && !Object.isFrozen(target)){
+    Object.freeze(target);
+    Object.keys(target).foreach(key => deepFreeze(target[key]));
+  }
+}
+```
