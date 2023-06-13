@@ -1,9 +1,9 @@
 :root{
   --menubaropen: 0fr;
   --maincontentshow:1fr;
+  --menudepheight:10%;
+  --submenuheight:0%;
 }
-
-
 .container{
   display: grid;
   height: 100vh;
@@ -20,12 +20,30 @@
 
 .menubar{
   background-color:#f1c40f;
-  border: 1px solid black; 
+  border: 1px solid black;
+  display: flex; 
+  flex-direction: column;
 }
 
 .main{
   background-color:  #27ae60;
   border: 1px solid black;
+}
 
-
+.menudep{
+  margin-bottom: 5px;
+  width: 100%;
+  height: var(--menudepheight);
+  background-color: #9b59b6;
+  display: flex;
+  flex-direction: column;
+}
+.menudep .submenu:first-child{
+  margin-top:50px;
+}
+.submenu{
+  margin-bottom: 5px;
+  width: 100%;
+  height: var(--submenuheight);
+  background-color: #3498db;
 }
