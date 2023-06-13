@@ -1,9 +1,0 @@
-body{
-  display: grid;
-  height:100em;
-  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-}
-
-.testblock{
-  border: 1px solid black;
-}

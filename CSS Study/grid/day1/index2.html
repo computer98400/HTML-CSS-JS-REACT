@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style2.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="menubtn"></div>
+  <div class="container">
+    <div class="menubar"></div>
+    <div class="main"></div>
+  </div>
+  <script>
+    const test = document.querySelector('.menubtn');
+    
+    let toggle = 0;
+
+
+    test.addEventListener('mouseover', function(){
+    
+      const $menu = document.querySelector(':root');
+      if(toggle == 0){
+        toggle = 1;
+        $menu.style.setProperty('--menubaropen', '2fr');
+        $menu.style.setProperty('--maincontentshow', '8fr');  
+      }else{
+        toggle= 0;
+        $menu.style.setProperty('--menubaropen', '0fr');
+        $menu.style.setProperty('--maincontentshow', '1fr');  
+      }
+    })
+
+    test.addEventListener('mouseout', function(){
+    
+    const $menu = document.querySelector(':root');
+    if(toggle == 0){
+      toggle = 1;
+      $menu.style.setProperty('--menubaropen', '2fr');
+      $menu.style.setProperty('--maincontentshow', '8fr');  
+    }else{
+      toggle= 0;
+      $menu.style.setProperty('--menubaropen', '0fr');
+      $menu.style.setProperty('--maincontentshow', '1fr');  
+    }
+  })
+
+
+  </script>
+</body>
+</html>
