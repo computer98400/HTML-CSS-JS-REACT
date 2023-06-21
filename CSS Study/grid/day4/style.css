@@ -1,0 +1,132 @@
+:root{
+  --clipingWidth:100px;
+  --clipingHeight:100px;
+}
+
+.container{
+  display: grid;
+  height:50vh;
+  width:70vw;
+  grid-template-columns: 1fr 1fr;
+}
+
+.left{
+  display:grid;
+  grid-template-columns: 5fr 5fr;
+}
+
+.right{
+  display: grid;
+  grid-template-rows: 1fr 2fr 3fr;
+}
+.part{
+  position:relative;
+  background-color: black;
+  padding: 5px;
+  background-clip: content-box;
+  box-sizing: content-box;
+  overflow: hidden;
+}
+.leftmain1{
+  background-color: #1abc9c;
+
+}
+
+.part:hover{
+  filter:brightness(0.8);
+}
+
+
+
+
+.leftmain2{
+  background-color: #3498db;
+}
+
+.rightmain1{
+  background-color: #f1c40f;
+}
+
+.rightmain2{
+  background-color: #9b59b6;
+}
+.rightmain3{
+  background-color: #e74c3c;
+}
+.backgroundicon{
+  position: absolute;
+  left:10%;
+  box-sizing: content-box;
+  display: block;
+  transition: 300ms;
+  fill: rgba(255, 255, 255, 0.397);
+}
+
+.right:has(.backgroundicon){
+  left:50%;
+}
+
+.backgroundText{
+  display:none;
+  position: absolute;
+  animation: fadeIn 300ms;
+}
+.leftmain1:hover > .backgroundText{
+  display:block;
+}
+.leftmain1:hover > .backgroundicon{
+  transform: translateX(20%);
+}
+.leftmain2 > .backgroundicon{
+  top:20%;
+}
+.leftmain2:hover > .backgroundText{
+  display:block;
+}
+.leftmain2:hover > .backgroundicon{
+  transform: translateX(30%);
+}
+.rightmain3:hover > .backgroundText{
+  display:block;
+}
+.rightmain3:hover > .backgroundicon{
+  transform: translateX(130%);
+}
+.rightmain2:hover > .backgroundText{
+  display:block;
+}
+.rightmain2:hover > .backgroundicon{
+  transform: translateX(130%);
+}
+
+
+.rightmain1:hover > .backgroundicon{
+  transform: translateX(350%);
+}
+
+.rightmain1:hover > .backgroundText{
+  display:block;
+  top: -50px;
+}
+
+.content{
+  font-family: "Noto Sans CJK KR";
+  font-weight: bolder;
+  top:0px;
+  color:rgba(255, 255, 255, 0.647);
+  font-size: 40pt;
+  transform: rotate(-10deg);
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+    transform: translateY(200%);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+}
