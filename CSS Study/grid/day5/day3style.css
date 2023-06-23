@@ -3,18 +3,14 @@
   --leftposition : 0vw;
   --rightposition : 80vw;
 }
-* {
-  box-sizing: border-box;
-  overflow-x:hidden;
-}
+
 
 .slideShowContainer{
-
   display: grid;
   width:500vw;
   height:82vh;
   grid-template-columns:repeat(5,1fr);
-  white-space: nowrap;
+  white-space: wrap;
   transform: translateX(var(--position));
   transition: 300ms;
 }
@@ -28,13 +24,11 @@
 .section2{
   width:100vw;
   height:82vh;
-  background-color: #e67e22;
 }
 
 .section3{
   width:100vw;
   height:82vh;
-  background-color: #f1c40f;
 }
 
 .section4{
@@ -65,14 +59,17 @@
 .rightArrow{
   width:100px;
   height:100px;
+  fill: #2ecc71;
+  display: none;
 }
 .leftArrow{
   width:100px;
   height:100px;
+  fill: #8fac10;
+  display: none;
 }
 .rightSection:hover{
   background: linear-gradient(to right,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.195));
-  transition: 300ms;
 }
 
 .leftSection{

@@ -5,17 +5,17 @@
 
 .MenuBoxContainer{
   display: grid;
-  height:50vh;
-  width:70vw;
+  height:100vh;
+  width:100vw;
   grid-template-columns: 1fr 1fr;
 }
 
-.left{
+.menuleft{
   display:grid;
   grid-template-columns: 5fr 5fr;
 }
 
-.right{
+.menuright{
   display: grid;
   grid-template-rows: 1fr 2fr 3fr;
 }
@@ -62,7 +62,7 @@
   fill: rgba(255, 255, 255, 0.397);
 }
 
-.right:has(.backgroundicon){
+.menuright:has(.backgroundicon){
   left:50%;
 }
 

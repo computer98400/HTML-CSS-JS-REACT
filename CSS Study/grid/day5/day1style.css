@@ -1,43 +1,64 @@
-.gridcontainer{
+body {
+  box-sizing: border-box;
+}
+
+.gridContainer{
   display: grid;
-  height: 100vh;
+  height: 100%;
   grid-template-rows: 1fr 1fr 1fr;
   transition: 300ms;
 }
 
-.gridcontainer:has(.header:hover){
+.gridContainer:has(.header:hover){
   grid-template-rows:2fr 1fr 1fr;
 }
 
-.gridcontainer:has(.main:hover){
+.gridContainer:has(.gridmain:hover){
   grid-template-rows:1fr 2fr 1fr;
 }
 
-.gridcontainer:has(.footer:hover){
+.gridContainer:has(.footer:hover){
   grid-template-rows:1fr 1fr 2fr;
 }
 
+.header{
+  border: 1px solid black;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  transition: 300ms;
+}
 
-
-.main{
+.gridmain{
   border: 1px solid black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   transition: 300ms;
 }
 
+.header:has(.header_content1:hover){
+  grid-template-rows:2fr 1fr 1fr;
+}
 
 
-.main:has(.main_content1:hover){
+.header:has(.header_content2:hover){
+  grid-template-rows:1fr 2fr 1fr;
+}
+
+.header:has(.header_content3:hover){
+  grid-template-rows:1fr 1fr 2fr;
+}
+
+
+.gridmain:has(.gridmain_content1:hover){
   grid-template-columns:2fr 1fr 1fr;
 }
 
 
-.main:has(.main_content2:hover){
+.gridmain:has(.gridmain_content2:hover){
   grid-template-columns:1fr 2fr 1fr;
 }
 
-.main:has(.main_content3:hover){
+.gridmain:has(.gridmain_content3:hover){
   grid-template-columns:1fr 1fr 2fr;
 }
 
@@ -75,14 +96,14 @@
   background-color: #f9ca24;
 }
 
-.main_content1{
+.gridmain_content1{
   background-color:#4834d4;
 }
 
-.main_content2{
+.gridmain_content2{
   background-color: #eb4d4b;
 }
-.main_content3{
+.gridmain_content3{
   background-color:#6ab04c;
 }
 

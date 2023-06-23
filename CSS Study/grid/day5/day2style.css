@@ -3,14 +3,20 @@
   --contentWidth: 82vw;
   --checkSize: 50px;
 }
-.header{
-  height:100px;
+
+
+
+.slideShowContainer{
+  overflow-x: hidden;
 }
 .vscontainer{
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
+
 .vsinnercontainer{
   height:var(--contentHeight);
   width:var(--contentWidth);
@@ -35,10 +41,17 @@
   height: var(--contentHeight);
   background-color: #e74c3c;
 }
-.vsContainer:has(.left:hover){
+.vsinnercontainer:has(.left:hover){
   grid-template: 1fr / 2fr 1fr 1fr;
 }
 
-.vsContainer:has(.right:hover){
+.vsinnercontainer:has(.right:hover){
   grid-template: 1fr / 1fr 1fr 2fr;
+}
+
+
+svg text {
+  z-index: 999;
+  font-family: 'Staatliches', cursive;
+  font-size: 6em;
 }
