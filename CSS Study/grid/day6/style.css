@@ -1,0 +1,183 @@
+body{
+  box-sizing:border-box;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.textContainer{
+  position: absolute;
+  opacity: 0;
+}
+
+.container{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+.graph{
+  transform: translate(50%,20%);
+}
+
+.detailcontainer1:hover .graph{
+  transform:translate(50%, 0%) scale(0.8,0.8);
+  transition:300ms;
+}
+
+.container1{
+  width:60vw;
+  height:90vh;
+  margin-right: 50px;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.container2{
+  width:30vw;
+  height:90vh;
+  border: 1px solid black;
+}
+
+.detailcontainer1{
+  width: 95%;
+  height: 45%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  border-radius: 15px;
+  overflow: hidden;
+  /* animation: detail1 800ms; */
+}
+
+.detailhover:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.detailcontainer2{
+  width: 55%;
+  height: 45%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  margin-right: 5%;
+  border-radius: 15px;
+  /* animation: detail2 800ms; */
+}
+
+.detailcontainer3{
+  width:35%;
+  height: 40%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  border-radius: 15px;
+  /* animation: detail3 800ms; */
+  overflow: hidden;
+}
+.cellphone{
+  transform: rotate(-45deg) translateY(30%);
+  transition: 500ms;
+}
+
+.cellphone:hover{
+  transform: translateY(0%);
+  transition: 500ms;
+}
+
+@keyframes detail3 {
+  0%{
+    opacity: 0;
+    transform: translateY(30%);
+  }  
+  100%{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+.detailcontainer1:hover .test1{
+  animation: bounce_frames 0.2s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: 4;
+}
+.detailcontainer1:hover .test2{
+  animation: bounce_frames 0.3s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: 4;
+}
+.detailcontainer1:hover .test3{
+  animation: bounce_frames 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: 2;
+}
+.detailcontainer1:hover .test4{
+  animation: bounce_frames 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: 2;
+}
+
+.path{
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+
+.detailcontainer1:hover .path{
+  animation: dash 1.5s linear;
+}
+
+.detailcontainer1:hover .circle{
+
+  animation: show 1.5s alternate;
+
+}
+
+@keyframes show{
+  from{
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  
+  to{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes detail2 {
+  0%{
+    opacity: 0;
+    transform: translateX(-30%);
+  }  
+  100%{
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes detail1 {
+  0%{
+    opacity: 0;
+    transform: translateY(-30%);
+  }  
+  100%{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes bounce_frames {
+  from {transform: translate3d(0, 0, 0);}
+  to {transform: translate3d(0, -50px, 0);}
+}

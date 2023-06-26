@@ -1,0 +1,9 @@
+.btn{
+  margin: 50px;
+  padding:30px;
+  width: 100px;
+  height: 200px;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
